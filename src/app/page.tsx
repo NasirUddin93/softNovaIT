@@ -1,12 +1,14 @@
+
 import Image from "next/image";
 import Link from "next/link";
+import { LinkedinIcon, FacebookIcon, TwitterIcon, YoutubeIcon } from "./SocialIcons";
 
 export default function HomePage() {
   return (
     <main className="bg-white">
       {/* 1️⃣ Hero / Banner Section */}
       <section className="relative h-[60vh] flex items-center justify-center bg-gray-900 text-white mb-16">
-        <Image src="/banner.jpg" alt="Hero Banner" fill className="object-cover opacity-60" priority />
+        <Image src="/home-banner.jpg" alt="Hero Banner" fill className="object-cover opacity-60" priority />
         <div className="relative z-10 text-center">
           <h1 className="text-5xl font-bold mb-4 drop-shadow-lg">Empowering Your Business with IT Innovation</h1>
           <p className="text-xl mb-6">SoftNovaIT – Your Partner in Digital Transformation</p>
@@ -17,8 +19,8 @@ export default function HomePage() {
       {/* 2️⃣ About Us Section */}
       <section className="max-w-4xl mx-auto mb-16 px-4">
         <h2 className="text-3xl font-semibold mb-2">About Us</h2>
-        <p className="mb-2">SoftNovaIT is a forward-thinking IT company specializing in innovative solutions for businesses of all sizes.</p>
-        <div className="flex flex-col md:flex-row gap-8 mt-4">
+        <p className="mb-2 text-justify">SoftNovaIT is a forward-thinking IT company specializing in innovative solutions for businesses of all sizes.SoftNovaIT is a forward-thinking IT company dedicated to delivering innovative and reliable technology solutions for businesses of all sizes. We specialize in web development, software solutions, AI-powered tools, and integrated IT services, helping organizations streamline operations, enhance productivity, and achieve their digital goals. Our commitment to quality, creativity, and client satisfaction drives everything we do.</p>
+        <div className="flex flex-col md:flex-row gap-8 mt-8">
           <div className="flex-1">
             <h3 className="font-bold">Mission</h3>
             <p>Deliver innovative IT solutions that empower businesses to thrive in the digital era.</p>
@@ -118,29 +120,62 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Example team members, replace with real data */}
           <div className="flex flex-col items-center">
-            <Image src="/team1.jpg" alt="Jane Doe" width={96} height={96} className="rounded-full mb-2" />
-            <h3 className="text-lg font-semibold">Jane Doe</h3>
-            <p>CEO</p>
+            <Image src="/team_member_04.png" alt="Jane Doe" width={96} height={96} className="rounded-full mb-2" />
+            <h3 className="text-lg font-semibold">Animesh Kumar Paul</h3>
+            <p>Executive Member</p>
             <div className="flex gap-2 mt-1">
               <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <Image src="/team2.jpg" alt="John Smith" width={96} height={96} className="rounded-full mb-2" />
-            <h3 className="text-lg font-semibold">John Smith</h3>
-            <p>Lead Developer</p>
+            <Image src="/team_member_05.png" alt="John Smith" width={96} height={96} className="rounded-full mb-2" />
+            <h3 className="text-lg font-semibold">Md. Anwar Hiron</h3>
+            <p>Network Specialist</p>
             <div className="flex gap-2 mt-1">
               <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <Image src="/team3.jpg" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
-            <h3 className="text-lg font-semibold">Alice Lee</h3>
+            <Image src="/team_member_03.png" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
+            <h3 className="text-lg font-semibold">Syed Mominul Islam</h3>
             <p>UI/UX Designer</p>
             <div className="flex gap-2 mt-1">
               <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
             </div>
           </div>
+          <div className="flex flex-col items-center">
+            <Image src="/team_member_01.jpg" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
+            <h3 className="text-lg font-semibold">Nasir Uddin</h3>
+            <p>Software Engineer</p>
+            <div className="flex gap-2 mt-1">
+              <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <Image src="/team_member_02.png" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
+            <h3 className="text-lg font-semibold">Ashraful Islam Emad</h3>
+            <p>Web Developer</p>
+            <div className="flex gap-2 mt-1">
+              <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <Image src="/team_member_03.png" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
+            <h3 className="text-lg font-semibold">Syed Mominul Islam</h3>
+            <p>UI/UX Designer</p>
+            <div className="flex gap-2 mt-1">
+              <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <Image src="/team_member_07.png" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
+            <h3 className="text-lg font-semibold">Md. Azizul Haque</h3>
+            <p>Database Specialist</p>
+            <div className="flex gap-2 mt-1">
+              <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -190,15 +225,24 @@ export default function HomePage() {
         <div className="flex flex-col md:flex-row gap-8">
           <div className="flex-1">
             <h3 className="font-bold mb-2">Address</h3>
-            <p>123 Main Street, City, Country</p>
+            <p>House-30, Road-11, Sector-10, Uttara, Dhaka-1230</p>
             <h3 className="font-bold mt-4 mb-2">Email</h3>
             <p>info@softnovait.com</p>
             <h3 className="font-bold mt-4 mb-2">Phone</h3>
-            <p>+123 456 7890</p>
+            <p>01707568468</p>
             <div className="flex gap-4 mt-4">
-              <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
-              <a href="#" className="text-blue-600 hover:underline">Facebook</a>
-              <a href="#" className="text-blue-600 hover:underline">Twitter</a>
+              <a href="https://www.linkedin.com/in/softnovait/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-blue-600 hover:text-blue-800 transition-colors">
+                <LinkedinIcon className="w-6 h-6" />
+              </a>
+              <a href="https://www.facebook.com/SoftNovaIT/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-blue-600 hover:text-blue-800 transition-colors">
+                <FacebookIcon className="w-6 h-6" />
+              </a>
+              <a href="https://x.com/SoftNovaIT" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-blue-600 hover:text-blue-800 transition-colors">
+                <TwitterIcon className="w-6 h-6" />
+              </a>
+              <a href="https://www.youtube.com/@softnovait" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-blue-600 hover:text-blue-800 transition-colors">
+                <YoutubeIcon className="w-6 h-6" />
+              </a>
             </div>
           </div>
           <div className="flex-1">
@@ -211,6 +255,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-    </main>
-  );
+
+  </main>
+ );
 }

@@ -1,11 +1,46 @@
+
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
+const projects = [
+  {
+    title: "Project One",
+    description: "Web application for e-commerce.",
+    image: "/project1.jpg",
+    category: "Web Development",
+    link: "#",
+  },
+  {
+    title: "Project Two",
+    description: "Mobile app for logistics management.",
+    image: "/project2.jpg",
+    category: "Mobile Apps",
+    link: "#",
+  },
+  {
+    title: "Project Three",
+    description: "AI-powered analytics dashboard.",
+    image: "/project3.jpg",
+    category: "AI Solutions",
+    link: "#",
+  },
+];
+
+const categories = ["All", "Web Development", "AI Solutions", "Mobile Apps"];
 
 export default function PortfolioPage() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+  const filteredProjects =
+    selectedCategory === "All"
+      ? projects
+      : projects.filter((p) => p.category === selectedCategory);
+
   return (
     <main className="bg-white">
       {/* Hero / Banner Section */}
-      <section className="relative h-[40vh] flex items-center justify-center bg-gray-900 text-white mb-12">
+      <section className="relative h-[60vh] flex items-center justify-center bg-gray-900 text-white mb-12">
         <Image src="/portfolio-banner.jpg" alt="Portfolio Banner" fill className="object-cover opacity-60" priority />
         <div className="relative z-10 text-center">
           <h1 className="text-5xl font-bold mb-2 drop-shadow-lg">Our Portfolio</h1>
@@ -17,35 +52,37 @@ export default function PortfolioPage() {
       {/* Project Categories / Filters (optional, static for now) */}
       <section className="max-w-4xl mx-auto mb-8 px-4 text-center">
         <div className="inline-flex gap-4 mb-4">
-          <button className="px-4 py-2 bg-blue-600 text-white rounded">All</button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded">Web Development</button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded">AI Solutions</button>
-          <button className="px-4 py-2 bg-gray-200 text-gray-700 rounded">Mobile Apps</button>
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`px-4 py-2 rounded font-semibold transition-colors ${
+                selectedCategory === cat
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-blue-100"
+              }`}
+              onClick={() => setSelectedCategory(cat)}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
       </section>
 
       {/* Portfolio Grid / Projects Gallery */}
       <section className="max-w-6xl mx-auto mb-16 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Example project cards, replace with real data */}
-          <div className="bg-white border rounded-lg p-4 shadow flex flex-col">
-            <Image src="/project1.jpg" alt="Project 1" width={400} height={200} className="mb-2 rounded" />
-            <h3 className="text-xl font-semibold">Project One</h3>
-            <p className="mb-2">Web application for e-commerce.</p>
-            <Link href="#" className="text-blue-600 underline">View Details</Link>
-          </div>
-          <div className="bg-white border rounded-lg p-4 shadow flex flex-col">
-            <Image src="/project2.jpg" alt="Project 2" width={400} height={200} className="mb-2 rounded" />
-            <h3 className="text-xl font-semibold">Project Two</h3>
-            <p className="mb-2">Mobile app for logistics management.</p>
-            <Link href="#" className="text-blue-600 underline">View Details</Link>
-          </div>
-          <div className="bg-white border rounded-lg p-4 shadow flex flex-col">
-            <Image src="/project3.jpg" alt="Project 3" width={400} height={200} className="mb-2 rounded" />
-            <h3 className="text-xl font-semibold">Project Three</h3>
-            <p className="mb-2">AI-powered analytics dashboard.</p>
-            <Link href="#" className="text-blue-600 underline">View Details</Link>
-          </div>
+          {filteredProjects.length === 0 ? (
+            <div className="col-span-full text-center text-gray-500">No projects found.</div>
+          ) : (
+            filteredProjects.map((project, idx) => (
+              <div key={idx} className="bg-white border rounded-lg p-4 shadow flex flex-col">
+                <Image src={project.image} alt={project.title} width={400} height={200} className="mb-2 rounded" />
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+                <p className="mb-2">{project.description}</p>
+                <Link href={project.link} className="text-blue-600 underline">View Details</Link>
+              </div>
+            ))
+          )}
         </div>
       </section>
 

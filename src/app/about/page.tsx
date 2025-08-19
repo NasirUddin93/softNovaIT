@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <main className="bg-white">
       {/* Hero / Banner Section */}
-      <section className="relative h-[40vh] flex items-center justify-center bg-gray-900 text-white mb-12">
+      <section className="relative h-[60vh] flex items-center justify-center bg-gray-900 text-white mb-12">
         <Image src="/about-banner.jpg" alt="About Us Banner" fill className="object-cover opacity-60" priority />
         <div className="relative z-10 text-center">
           <h1 className="text-5xl font-bold mb-2 drop-shadow-lg">About Us</h1>
