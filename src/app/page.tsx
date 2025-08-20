@@ -130,15 +130,23 @@ export default function HomePage() {
           <div className="flex flex-col items-center">
             <Image src="/team_member_05.png" alt="John Smith" width={96} height={96} className="rounded-full mb-2" />
             <h3 className="text-lg font-semibold">Md. Anwar Hiron</h3>
+            <p>Server Specialist</p>
+            <div className="flex gap-2 mt-1">
+              <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
+            </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <Image src="/team_member_07.jpg" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
+            <h3 className="text-lg font-semibold">MD TAREK AHAMED</h3>
             <p>Network Specialist</p>
             <div className="flex gap-2 mt-1">
               <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <Image src="/team_member_03.png" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
-            <h3 className="text-lg font-semibold">Syed Mominul Islam</h3>
-            <p>UI/UX Designer</p>
+            <Image src="/team_member_07.png" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
+            <h3 className="text-lg font-semibold">Md. Azizul Haque</h3>
+            <p>Database Specialist</p>
             <div className="flex gap-2 mt-1">
               <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
             </div>
@@ -154,7 +162,7 @@ export default function HomePage() {
           <div className="flex flex-col items-center">
             <Image src="/team_member_02.png" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
             <h3 className="text-lg font-semibold">Ashraful Islam Emad</h3>
-            <p>Web Developer</p>
+            <p>Senior Web Developer</p>
             <div className="flex gap-2 mt-1">
               <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
             </div>
@@ -162,15 +170,16 @@ export default function HomePage() {
           <div className="flex flex-col items-center">
             <Image src="/team_member_03.png" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
             <h3 className="text-lg font-semibold">Syed Mominul Islam</h3>
-            <p>UI/UX Designer</p>
+            <p>Web Developer</p>
             <div className="flex gap-2 mt-1">
               <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
             </div>
           </div>
+
           <div className="flex flex-col items-center">
-            <Image src="/team_member_07.png" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
+            <Image src="/team_member_06.png" alt="Alice Lee" width={96} height={96} className="rounded-full mb-2" />
             <h3 className="text-lg font-semibold">Md. Azizul Haque</h3>
-            <p>Database Specialist</p>
+            <p>Marketing Executive</p>
             <div className="flex gap-2 mt-1">
               <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
             </div>
